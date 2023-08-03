@@ -1,27 +1,36 @@
 html {
+  /* note: pencilcode does not support this attribute */
   scroll-behavior: smooth;
 }
 
-html, body {
-    width:auto;
-    height: 5000px;
+html,
+body {
+  width: auto;
+  height: auto;
+  padding: 3em;
+  /* display: inline; */
+}
+
+.clear {
+  clear: both;
 }
 
 body {
-  background-color: #333333;
-  background-image: url(https://img1.cgtrader.com/items/2848158/223e0cba1d/large/an-ancient-greek-palace-3d-model-fbx-stl.jpg);
+  background-image: url(https://raw.githubusercontent.com/thekaigonzalez/-modern-stoic/main/background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  /*background-repeat: no-repeat;*/
-  background-size: 1200px auto;
-  /*background-filter: */
-  
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 5em;
+  background-size: cover;
+  /* main backdrop blur */
+  /* backdrop-filter: blur(8px); */
+  /* -webkit-backdrop-filter: blur(8px); */
+
+  /* also adding scroll behaviour onto this */
   scroll-behavior: smooth;
+
 }
+
+
 
 p,
 li,
@@ -31,15 +40,19 @@ a {
   /*text-align: center;*/
 }
 
-h2,
+
 h1 {
   font-size: 30px;
   text-shadow: 1px 1px 10px #343434;
-  /*text-align: center;*/
 }
 
+h2 {
+  font-size: 20px;
+  text-shadow: 1px 1px 10px #343434;
+}
+
+
 a {
-  /*text-align: center;*/
   text-decoration: none;
   color: #ebebeb;
 }
@@ -71,77 +84,95 @@ a {
   }
 }
 
-@keyframes swing {
-  20% {
-    transform: rotate(1deg);
+@keyframes superman-fly-right {
+  from {
+      transform: translateX(-0.5vw);
+      opacity: 50%;
   }
-
-  40% {
-    transform: rotate(-1deg);
-  }
-
-  60% {
-    transform: rotate(1deg);
-  }
-
-  80% {
-    transform: rotate(-1deg);
-  }
-
-  100% {
-    transform: rotate(1deg);
+  to {
+      transform: translateX(0);
+      opacity: 100%;
   }
 }
 
 #first_body,
 #second_body {
   box-shadow: 1px 4px 30px #212121;
-  /* animation: floating 5s ease-in-out infinite; */
   width: 300px;
-  transition: transform 1s;
-  /* Animation */
-  margin: 10px;
+  transition: transform ease-in-out 1s;
+  top: -100px;
+  animation: superman-fly-right ease-out 1s none;
 }
 
 #first_body:hover,
 #second_body:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 img {
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  overflow: hidden;
+}
+
+.buttona {
+  background-color: #444444;
+  box-shadow: 0.5px 1px 10px #212121;
+  
+  color: white;
+  
+  font-family: 'SF Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 15px;
+  
+  font-weight: bold;
+  border-style:none;
+
+  padding: 1em;
+  float: right;
+}
+
+img {
+  animation: superman-fly-right ease-out 1s forwards, floating ease-in-out 10s infinite forwards;
 }
 
 #first_body {
   background-color: #404040;
   border-radius: 25px;
   padding: 1em;
-  float: left;
-  /*position: absolute;*/
+  overflow: auto;
+  /* box-sizing: border-box; */
+  /* width: 25%; */
 }
 
+#left-side {
+  display: inline;
+  margin-top: 40px;
+  float: left;
+}
+
+#right-side {
+  float: right;
+  margin-top: 40px;
+  display: inline;
+}
 
 #second_body {
   background-color: #404040;
   border-radius: 25px;
   padding: 1em;
   float: right;
-  /*display: inline;*/
-  /*margin: 10px;*/
+
+
+  /* overflow: auto; */
+  /* position: relative; */
+  /* box-sizing: border-box; */
+
+  /* width: 25%; */
 }
 
 .grey {
   filter: grayscale();
 }
 
-img {
-  /*width: 150px;*/
-  -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222);
-}
-
-a {
+.link {
   box-shadow: inset 0 0 0 0 #ababab;
   color: #ababab;
   margin: 0 -.25rem;
@@ -149,7 +180,20 @@ a {
   transition: color 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 
-a:hover {
-  box-shadow: inset 400px 0 0 0 #ff8080;
+.link:hover {
+  box-shadow: inset 400px 0 10px 0 #b1b1b1;
+  color: white;
+}
+
+.link {
+  box-shadow: inset 0 0 0 0 #ababab;
+  color: #ababab;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color 1s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+.link:hover {
+  box-shadow: inset 400px 0 10px 0 #b1b1b1;
   color: white;
 }
